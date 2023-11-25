@@ -37,6 +37,15 @@ function displayExpenses(data){
     $('.del-btn').click(function(){
         deleteExpense(+$(this).attr('data-value'))
     })
+    getTotal();
+}
+
+function getTotal(){
+    let bal = 0;
+    expenses.forEach(obj=>{
+        bal+=+obj.amount;
+    })
+    $("#total").text(bal);
 }
 
 function getDetails() {
